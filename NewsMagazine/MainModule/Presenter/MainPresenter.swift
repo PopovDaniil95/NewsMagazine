@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 protocol MainViewProtocol: AnyObject {
     func succes()
@@ -14,16 +16,18 @@ protocol MainViewProtocol: AnyObject {
 
 protocol MainViewPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
-    func getNews()
     var news: News? { get set }
+    var viewModels: [CustomTableViewCellModel] { get set }
+    func getNews()
 }
 
 class MainPresenter: MainViewPresenterProtocol {
-    
+        
     weak var view: MainViewProtocol!
     let networkService: NetworkServiceProtocol!
     var news: News?
-    
+    var viewModels: [CustomTableViewCellModel] = []
+
     required init(view: MainViewProtocol, networkService: NetworkServiceProtocol) {
         self.view = view
         self.networkService = networkService
@@ -36,15 +40,20 @@ class MainPresenter: MainViewPresenterProtocol {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let news):
-                    self.news = news
-                    self.view?.succes()
+                    self.viewModels = news.compactMap({
+                        CustomTableViewCellModel(
+                            title: $0.title,
+                            subtitle: $0.description ?? "No description",
+                            imageURL: URL(string: $0.urlToImage ?? "")
+                        )
+                    })
+                    DispatchQueue.main.async {
+                        self.view?.succes()
+                    }
                 case .failure(let error):
                     self.view.failure(error: error)
                 }
             }
         }
     }
-    
-    
-    
 }

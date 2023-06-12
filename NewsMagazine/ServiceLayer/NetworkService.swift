@@ -8,11 +8,11 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func getNews(complition: @escaping (Result<News?, Error>) -> Void)
+    func getNews(complition: @escaping (Result<[Article], Error>) -> Void)
 }
 
 class NetworkService: NetworkServiceProtocol {
-    func getNews(complition: @escaping (Result<News?, Error>) -> Void) {
+    func getNews(complition: @escaping (Result<[Article], Error>) -> Void) {
         let urlString = "https://newsapi.org/v2/top-headlines?country=US&apiKey=93b2b322cda94a62a2c163ef389a5296"
         guard let url = URL(string: urlString) else { return }
             
@@ -23,11 +23,10 @@ class NetworkService: NetworkServiceProtocol {
                 }
                 do {
                     let obj = try JSONDecoder().decode(News.self, from: data!)
-                    complition(.success(obj))
+                    complition(.success(obj.articles))
                 } catch {
                     complition(.failure(error))
                 }
             }.resume()
         }
-    
 }

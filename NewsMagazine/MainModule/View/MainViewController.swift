@@ -9,32 +9,42 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    private let tableView = UITableView()
     
     var presenter: MainViewPresenterProtocol!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        createTableView()
+        
+    }
+
+    private func createTableView() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
-
 
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return presenter.news?.articles.count ?? 0
+        return presenter.viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let news = presenter.news?.articles[indexPath.row]
-        cell.textLabel?.text = news?.title
-        cell.textLabel?.numberOfLines = 0
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
+        cell.configure(viewModule: presenter.viewModels[indexPath.row])
+        
         return cell
     }
     
@@ -48,6 +58,5 @@ extension MainViewController: MainViewProtocol {
     func failure(error: Error) {
         print(error.localizedDescription)
     }
-    
     
 }
