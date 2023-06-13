@@ -10,10 +10,11 @@ import UIKit
 protocol BuilderProtocol {
     
     static func createMainModule() -> UIViewController
-    
+    static func createDetailModule(viewModule: CustomTableViewCellModel) -> UIViewController
 }
 
 class ModuleBuilder: BuilderProtocol {
+    
     static func createMainModule() -> UIViewController {
         let view = MainViewController()
         let networkService = NetworkService()
@@ -22,5 +23,12 @@ class ModuleBuilder: BuilderProtocol {
         return view
     }
     
+    static func createDetailModule(viewModule: CustomTableViewCellModel) -> UIViewController {
+        let view = DetailViewController()
+        let networkService = NetworkService()
+        let presenter = DetailPresenter(view: view, networkService: networkService, viewModule: viewModule)
+        view.presenter = presenter
+        return view
+    }
     
 }

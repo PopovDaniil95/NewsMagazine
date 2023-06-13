@@ -48,6 +48,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewModule = presenter.viewModels[indexPath.row]
+        let detailViewController = ModuleBuilder.createDetailModule(viewModule: viewModule)
+        navigationController?.pushViewController(detailViewController, animated: false)
+    }
+    
 }
 
 extension MainViewController: MainViewProtocol {

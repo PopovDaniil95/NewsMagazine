@@ -23,7 +23,13 @@ class CustomTableViewCellModel {
 class CustomTableViewCell: UITableViewCell {
     
     var customImage = UIImageView()
-    var customLable = UILabel()
+    
+    var customLable: UILabel = {
+        let lable = UILabel()
+        lable.numberOfLines = 0
+        lable.font = .systemFont(ofSize: 18, weight: .bold)
+        return lable
+    }()
   
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
