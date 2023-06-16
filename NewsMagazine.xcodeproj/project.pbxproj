@@ -23,6 +23,10 @@
 		8C616F7B2A35954C00DA3266 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C616F7A2A35954C00DA3266 /* CustomTableViewCell.swift */; };
 		8C89D8DA2A36E155008CB425 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89D8D92A36E155008CB425 /* DetailViewController.swift */; };
 		8C89D8DC2A36E173008CB425 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89D8DB2A36E173008CB425 /* DetailPresenter.swift */; };
+		8CCED3AE2A3C5FFA007BD0E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCED3AD2A3C5FFA007BD0E1 /* User.swift */; };
+		8CCED3B12A3C639A007BD0E1 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCED3B02A3C639A007BD0E1 /* Dynamic.swift */; };
+		8CCED3B32A3C65BC007BD0E1 /* ViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCED3B22A3C65BC007BD0E1 /* ViewModule.swift */; };
+		8CCED3B62A3C667C007BD0E1 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCED3B52A3C667B007BD0E1 /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		8C616F7A2A35954C00DA3266 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		8C89D8D92A36E155008CB425 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8C89D8DB2A36E173008CB425 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		8CCED3AD2A3C5FFA007BD0E1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8CCED3B02A3C639A007BD0E1 /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		8CCED3B22A3C65BC007BD0E1 /* ViewModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModule.swift; sourceTree = "<group>"; };
+		8CCED3B52A3C667B007BD0E1 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 			children = (
 				8C077EC02A346DB500731E28 /* ModuleBuilder.swift */,
 				8C077EC22A346E5C00731E28 /* ServiceLayer */,
+				8CCED3AB2A3C5F89007BD0E1 /* AuthModule */,
 				8C077EBA2A346BBA00731E28 /* MainModule */,
 				8C89D8D82A36E0DA008CB425 /* DetailModule */,
 				8C077E8C2A346B6000731E28 /* SceneDelegate.swift */,
@@ -210,6 +219,41 @@
 				8C89D8D92A36E155008CB425 /* DetailViewController.swift */,
 			);
 			path = DetailView;
+			sourceTree = "<group>";
+		};
+		8CCED3AB2A3C5F89007BD0E1 /* AuthModule */ = {
+			isa = PBXGroup;
+			children = (
+				8CCED3B42A3C6661007BD0E1 /* View */,
+				8CCED3AF2A3C637E007BD0E1 /* Bindings */,
+				8CCED3AC2A3C5FCF007BD0E1 /* UserModule */,
+			);
+			path = AuthModule;
+			sourceTree = "<group>";
+		};
+		8CCED3AC2A3C5FCF007BD0E1 /* UserModule */ = {
+			isa = PBXGroup;
+			children = (
+				8CCED3AD2A3C5FFA007BD0E1 /* User.swift */,
+			);
+			path = UserModule;
+			sourceTree = "<group>";
+		};
+		8CCED3AF2A3C637E007BD0E1 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				8CCED3B02A3C639A007BD0E1 /* Dynamic.swift */,
+				8CCED3B22A3C65BC007BD0E1 /* ViewModule.swift */,
+			);
+			path = Bindings;
+			sourceTree = "<group>";
+		};
+		8CCED3B42A3C6661007BD0E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CCED3B52A3C667B007BD0E1 /* AuthViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,14 +387,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CCED3B32A3C65BC007BD0E1 /* ViewModule.swift in Sources */,
 				8C89D8DA2A36E155008CB425 /* DetailViewController.swift in Sources */,
 				8C077EC92A34743500731E28 /* MainViewController.swift in Sources */,
 				8C077E8B2A346B6000731E28 /* AppDelegate.swift in Sources */,
 				8C89D8DC2A36E173008CB425 /* DetailPresenter.swift in Sources */,
 				8C616F7B2A35954C00DA3266 /* CustomTableViewCell.swift in Sources */,
 				8C077EBF2A346C1100731E28 /* News.swift in Sources */,
+				8CCED3AE2A3C5FFA007BD0E1 /* User.swift in Sources */,
 				8C077EC12A346DB500731E28 /* ModuleBuilder.swift in Sources */,
 				8C077EC42A346E7A00731E28 /* NetworkService.swift in Sources */,
+				8CCED3B62A3C667C007BD0E1 /* AuthViewController.swift in Sources */,
+				8CCED3B12A3C639A007BD0E1 /* Dynamic.swift in Sources */,
 				8C077EC62A3470E500731E28 /* MainPresenter.swift in Sources */,
 				8C077E8D2A346B6000731E28 /* SceneDelegate.swift in Sources */,
 			);

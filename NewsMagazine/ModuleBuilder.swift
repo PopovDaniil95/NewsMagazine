@@ -15,6 +15,13 @@ protocol BuilderProtocol {
 
 class ModuleBuilder: BuilderProtocol {
     
+    static func createAuthModule() -> UIViewController {
+        let view = AuthViewController()
+        
+        return view
+        
+    }
+    
     static func createMainModule() -> UIViewController {
         let view = MainViewController()
         let networkService = NetworkService()

@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let mainVC = ModuleBuilder.createMainModule()
-        let navBar = UINavigationController(rootViewController: mainVC)
+        let authVC = ModuleBuilder.createAuthModule()
+        let navBar = UINavigationController(rootViewController: authVC)
         window?.rootViewController = navBar
         window?.makeKeyAndVisible()
     }
