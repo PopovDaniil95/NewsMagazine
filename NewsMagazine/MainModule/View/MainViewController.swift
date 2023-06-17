@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTableView()
-        
+        navigationItem.setHidesBackButton(true, animated: false)
     }
 
     private func createTableView() {
