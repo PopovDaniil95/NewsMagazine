@@ -9,17 +9,21 @@ import UIKit
 
 protocol BuilderProtocol {
     
+    static func createLaunchScreenModule() -> UIViewController
+    static func createAuthModule() -> UIViewController
     static func createMainModule() -> UIViewController
     static func createDetailModule(viewModule: CustomTableViewCellModel) -> UIViewController
 }
 
 class ModuleBuilder: BuilderProtocol {
+    static func createLaunchScreenModule() -> UIViewController {
+        let view = LaunchScreenController()
+        return view
+    }
     
     static func createAuthModule() -> UIViewController {
         let view = AuthViewController()
-        
         return view
-        
     }
     
     static func createMainModule() -> UIViewController {
