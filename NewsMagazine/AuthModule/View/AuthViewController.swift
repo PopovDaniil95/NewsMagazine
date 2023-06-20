@@ -46,7 +46,6 @@ class AuthViewController: UIViewController {
         lable.font = .systemFont(ofSize: 20, weight: .light)
         return lable
     }()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +54,7 @@ class AuthViewController: UIViewController {
         bindViewModule()
         textFieldPassword.delegate = self
         textFieldLogin.delegate = self
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     func setupBackgraundColor() {
@@ -104,27 +104,18 @@ extension AuthViewController {
     func createElementsForViewAuth() {
         lableLoginScreen.text = "Login Screen"
         lableLoginScreen.font = .systemFont(ofSize: 25, weight: .bold)
-//        lableLoginScreen.textColor = .black
         
         lableLogin.text = "Login"
         lableLogin.font = .systemFont(ofSize: 20, weight: .light)
-//        lableLogin.textColor = .black
         
         lablePassword.text = "Password"
         lablePassword.font = .systemFont(ofSize: 20, weight: .light)
-//        lablePassword.textColor = .black
 
         textFieldLogin.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         textFieldLogin.layer.cornerRadius = 10
         
         textFieldPassword.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         textFieldPassword.layer.cornerRadius = 10
-        
-//        goButton.titleLabel?.isEnabled = true
-//        goButton.titleLabel?.font = .systemFont(ofSize: 25, weight: .bold)
-//        goButton.titleLabel?.text = "Go"
-//        goButton.titleLabel?.textColor = .black
-
         
         view.addSubview(lableLoginScreen)
         view.addSubview(lableLogin)

@@ -43,6 +43,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
+        cell.customImage.image = nil
         cell.configure(viewModule: presenter.viewModels[indexPath.row])
         
         return cell
@@ -51,7 +52,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewModule = presenter.viewModels[indexPath.row]
         let detailViewController = ModuleBuilder.createDetailModule(viewModule: viewModule)
-        navigationController?.pushViewController(detailViewController, animated: false)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
     
 }

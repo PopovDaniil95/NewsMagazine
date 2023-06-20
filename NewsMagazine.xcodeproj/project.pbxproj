@@ -121,15 +121,14 @@
 		8C077E892A346B6000731E28 /* NewsMagazine */ = {
 			isa = PBXGroup;
 			children = (
-				8C75164F2A404D5200D21F93 /* LaunchScreenController.swift */,
-				8C7516512A404EF100D21F93 /* LaunchScreen.storyboard */,
-				8C077EC02A346DB500731E28 /* ModuleBuilder.swift */,
+				8CA6B0CB2A4199E9002159BF /* LaunchScreen */,
 				8C077EC22A346E5C00731E28 /* ServiceLayer */,
 				8CCED3AB2A3C5F89007BD0E1 /* AuthModule */,
 				8C077EBA2A346BBA00731E28 /* MainModule */,
 				8C89D8D82A36E0DA008CB425 /* DetailModule */,
 				8C077E8C2A346B6000731E28 /* SceneDelegate.swift */,
 				8C077E8A2A346B6000731E28 /* AppDelegate.swift */,
+				8C077EC02A346DB500731E28 /* ModuleBuilder.swift */,
 				8C077E932A346B6500731E28 /* Assets.xcassets */,
 				8C077E982A346B6500731E28 /* Info.plist */,
 			);
@@ -219,6 +218,15 @@
 				8C89D8D92A36E155008CB425 /* DetailViewController.swift */,
 			);
 			path = DetailView;
+			sourceTree = "<group>";
+		};
+		8CA6B0CB2A4199E9002159BF /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8C75164F2A404D5200D21F93 /* LaunchScreenController.swift */,
+				8C7516512A404EF100D21F93 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		8CCED3AB2A3C5F89007BD0E1 /* AuthModule */ = {

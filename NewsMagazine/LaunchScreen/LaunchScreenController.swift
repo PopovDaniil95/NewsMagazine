@@ -54,9 +54,7 @@ class LaunchScreenController: UIViewController {
             if done {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
                     let authVC = ModuleBuilder.createAuthModule()
-                    authVC.modalTransitionStyle = .crossDissolve
-                    authVC.modalPresentationStyle = .fullScreen
-                    self.present(authVC, animated: true)
+                    self.navigationController?.pushViewController(authVC, animated: false)
                 })
             }
         })

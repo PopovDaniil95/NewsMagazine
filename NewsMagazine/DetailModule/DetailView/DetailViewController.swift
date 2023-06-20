@@ -30,10 +30,13 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if self.traitCollection.userInterfaceStyle == .dark {
+            navigationItem.backBarButtonItem?.tintColor = .black
             view.backgroundColor = .black
         } else {
             view.backgroundColor = .white
+            navigationItem.backBarButtonItem?.tintColor = .white
         }
         
         createElementsForView()
@@ -51,9 +54,9 @@ class DetailViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 250),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            imageView.heightAnchor.constraint(equalToConstant: 200),
             
             titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),

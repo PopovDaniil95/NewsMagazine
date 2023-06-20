@@ -20,10 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         let launchVC = ModuleBuilder.createLaunchScreenModule()
         let navBar = UINavigationController(rootViewController: launchVC)
+
         window?.rootViewController = navBar
         window?.makeKeyAndVisible()
     }
 
+
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
