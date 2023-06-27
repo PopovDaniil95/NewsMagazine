@@ -17,9 +17,10 @@ Each cell in the list shows an image and the title of the article.
 News Details Screen:
 Tapping on a news cell from the list opens this screen.
 It presents the selected news article's image, title, and description.
-Technologies and Tools
 
-# The development of this application involved the following technologies and tools:
+# Technologies and Tools
+
+The development of this application involved the following technologies and tools:
 
 Programming Language: Swift
 
